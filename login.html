@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Login — Cubemail</title>
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="global.css">
+</head>
+<body>
+  <main class="center">
+    <div class="card" style="width:420px;max-width:96%">
+      <h2 style="margin:0 0 6px">Login to Cubemail</h2>
+      <p class="small" style="margin:0 0 14px">Your profile will be loaded automatically after sign-in.</p>
+
+      <div class="form-row">
+        <label class="label" for="email">Email</label>
+        <input id="email" class="input" type="email" autocomplete="username" placeholder="you@cubemail.com">
+      </div>
+
+      <div class="form-row">
+        <label class="label" for="password">Password</label>
+        <input id="password" class="input" type="password" autocomplete="current-password" placeholder="Password">
+      </div>
+
+      <div id="error" class="error"></div>
+
+      <div style="display:flex;gap:12px;margin-top:12px">
+        <button id="loginBtn" class="btn btn-primary" style="flex:1">Login</button>
+        <button id="gotoSignup" class="btn btn-ghost" style="flex:1">Sign up</button>
+      </div>
+
+      <p class="small" style="margin-top:12px;text-align:center"><a href="#" onclick="alert('Password reset not implemented in this template')">Forgot password?</a> • <span>Powered by Supabase</span></p>
+    </div>
+  </main>
+
+  <!-- Supabase UMD -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.1/dist/umd/supabase.js"></script>
+  <script src="supabaseClient.js"></script>
+  <script src="login.js" defer></script>
+</body>
+</html>
