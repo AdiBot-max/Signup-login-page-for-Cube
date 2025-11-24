@@ -1,23 +1,84 @@
+/* ===== BASIC RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
 body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background-color: #f5f5f5;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ===== CARD WRAPPER ===== */
+.container {
+  background: #fff;
+  padding: 30px;
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 h1 {
+  font-size: 24px;
   color: #333;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-form input {
-  display: block;
-  margin: 10px 0;
-  padding: 8px;
-  width: 200px;
+/* ===== INPUTS ===== */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: 0.2s;
 }
 
-form button {
-  padding: 10px 15px;
+input:focus {
+  border-color: #4285f4;
+  box-shadow: 0 0 0 2px rgba(66,133,244,0.3);
+  outline: none;
+}
+
+/* ===== BUTTON ===== */
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #4285f4;
+  color: white;
   cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
 }
 
+button:hover {
+  background: #2f6fe0;
+}
+
+/* ===== CUSTOM ALERT ===== */
+.alert {
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  display: none;
+}
+
+.alert.success {
+  background: #d4f6da;
+  color: #1b7a33;
+}
+
+.alert.error {
+  background: #ffd6d6;
+  color: #a92121;
+}
