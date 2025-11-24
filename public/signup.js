@@ -1,4 +1,11 @@
 const form = document.getElementById('signupForm');
+const alertBox = document.getElementById('alertBox');
+
+function showAlert(text, type = 'error') {
+  alertBox.textContent = text;
+  alertBox.className = 'alert ' + type;
+  alertBox.style.display = 'block';
+}
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -6,12 +13,13 @@ form.addEventListener('submit', async (e) => {
   let cubemail = document.getElementById('cubemail').value.trim();
   const password = document.getElementById('password').value;
 
-  if (!cubemail.endsWith("@cubemail.com")) {
-    return showAlert("Email must end with @cubemail.com", "error");
+  if (!cubemail || !password) {
+    return showAlert("All fields are required.", "error");
   }
 
-  if (!cubemail || !password) {
-    return showAlert("Both fields are required.", "error");
+  // Force user to type full email
+  if (!cubemail.endsWith("@cubemail.com")) {
+    return showAlert("Cubemail must end with @cubemail.com", "error");
   }
 
   try {
@@ -24,16 +32,16 @@ form.addEventListener('submit', async (e) => {
     const data = await res.json();
 
     if (res.status >= 400) {
-      return showAlert(data.error?.message || "Signup error", "error");
+      return showAlert(data.error?.message || data.error || "Unknown error", "error");
     }
 
-    showAlert("Account created!", "success");
+    showAlert("Signup successful! Redirecting...", "success");
+
     setTimeout(() => {
       window.location.href = "login.html";
-    }, 800);
+    }, 1200);
 
   } catch (err) {
-    console.error(err);
-    showAlert("Server error, try again later", "error");
+    showAlert("Server error, try again later.", "error");
   }
 });
