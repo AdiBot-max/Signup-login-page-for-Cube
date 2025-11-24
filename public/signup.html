@@ -6,13 +6,20 @@
   <link rel="stylesheet" href="global.css">
 </head>
 <body>
-  <h1>Sign Up</h1>
-  <form id="signupForm">
-    <input type="text" id="cubemail" placeholder="Your Cubemail" required>
-    <input type="password" id="password" placeholder="Password" required>
-    <button type="submit">Sign Up</button>
-  </form>
+
+  <div class="container">
+    <h1>Create Cubemail</h1>
+
+    <div id="alertBox" class="alert"></div>
+
+    <form id="signupForm">
+      <input type="text" id="cubemail" placeholder="Your Cubemail (user@cubemail.com)" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+
   <script type="module" src="signup.js"></script>
+
 </body>
 </html>
-
